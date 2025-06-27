@@ -34,11 +34,16 @@ void main(){
 
 // calculate the area of trangle
 
-float base = 20;
-float height = 90;
- float area =(20*90)*1/2;
-printf("%f",area);
+//float base = 20;
+///float height = 90;
+//float area =(20*90)*1/2;
+//printf("%f",area);
 
+// add two number
+int a = 10; 
+	int b = 30;
+	int c = a+b;
+	printf("the value is:%d",c);
 
 
 
