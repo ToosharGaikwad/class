@@ -1,5 +1,5 @@
 N#include <stdio.h>
-void main(){
+void main() {
 //	int c = 10>20>3040<50!=30;
 //	printf("%d",c);
 
@@ -46,7 +46,7 @@ void main(){
 
 //int c = printf("xyz")+22<=30||21+printf("xyz");
 
-int c = printf("tushar")+23&&45+printf("hi");
+	int c = printf("tushar")+23&&45+printf("hi");
 
 
 
