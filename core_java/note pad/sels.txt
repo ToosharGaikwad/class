@@ -1,0 +1,57 @@
+class sels{
+int id,salary,target;
+String name;
+double insentive;
+
+void setid (int id){
+this.id = id;
+}
+void setsalary(int salary){
+this.salary = salary;
+}
+
+void settarget (int target){
+this.target = target;
+}
+
+
+void setname (String name){
+this.name = name;
+}
+
+void setins(double ins){
+this.ins = ins;
+}
+
+}
+
+class s{
+
+public static void main(String []args){
+
+sels s = new sels();
+s.setid(32);
+s.setsalary(354555);
+s.setname("abc");
+s.setins(2001);
+
+System.out.println(s.salary);
+System.out.println(s.name);
+//System.out.println(s.);
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

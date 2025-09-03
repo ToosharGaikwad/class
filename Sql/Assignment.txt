@@ -1,0 +1,354 @@
+1) Create the table Member, Books and Issue without any constraints as
+mentioned in the schema description above.
+
+mysql> create table member( Member_Id Int Unique, member_name varchar(30)
+    -> ,member_Address varchar(50),Account_opendate date,
+    -> membership_type varchar(20),fees_paid int ,maxbook_allow int
+    -> ,penalty_amount decimal(7,2));
+Query OK, 0 rows affected (0.07 sec)
+
+
+mysql> create table Books
+    -> (Book_No int , Book_Name varchar(30),
+    -> Author_name Varchar(30),
+    -> Cost Decimal(7,2),
+    -> Category Char(10));
+Query OK, 0 rows affected (0.03 sec)
+
+
+mysql> create table issue_book
+    -> (Lib_Issue_Id Int,Book_No Int,
+    -> Member_Id Int,Issue_Date Date,
+    -> Return_date Date);
+Query OK, 0 rows affected (0.04 sec)
+
+
+2) View the structure of the tables.
+
+
+mysql> desc member;
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| Member_Id        | int          | YES  | UNI | NULL    |       |
+| member_name      | varchar(30)  | YES  |     | NULL    |       |
+| member_Address   | varchar(50)  | YES  |     | NULL    |       |
+| Account_opendate | date         | YES  |     | NULL    |       |
+| membership_type  | varchar(20)  | YES  |     | NULL    |       |
+| fees_paid        | int          | YES  |     | NULL    |       |
+| maxbook_allow    | int          | YES  |     | NULL    |       |
+| penalty_amount   | decimal(7,2) | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
+
+
+3) Drop the Member table
+
+mysql> drop table member;
+Query OK, 0 rows affected (0.03 sec)
+
+4) Create the table Member again as per the schema description with the
+following constraints.
+a. Member_Id – Primary Key
+b. Membership_type - ‘Lifetime’,’ Annual’, ‘Half Yearly’,’ Quarterly’
+
+mysql> create table member
+    -> (Member_Id int primary key ,
+    -> member_name varchar(30),
+    -> member_Address varchar(50),
+    -> Account_opendate date,
+    -> Membership_type varchar(20));
+Query OK, 0 rows affected (0.08 sec)
+
+// incomplite  //
+
+
+5) Modify the table Member increase the width of the member name to 30
+characters.
+
+
+mysql> alter table member
+    -> modify column member_name varchar(80);
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+6) Add a column named as Reference of Char(30) to Issue table.
+
+mysql> Alter table issue_book
+    -> add column Reference char(30);
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+7) Delete/Drop the column Reference from Issue.
+
+
+mysql> alter table issue_book
+    -> drop column reference;
+Query OK, 0 rows affected (0.06 sec)
+Records
+
+8) Rename the table Issue to Lib_Issue.
+
+mysql> rename table issue_book to lib_issue;
+Query OK, 0 rows affected (0.03 sec)
+
+9) Insert following data in table Member
+Member
+ID
+Member
+Name
+Member
+Address
+2 row record;
+
+
+mysql> INSERT INTO member
+    -> VALUES (1, 'rich_sharma','xxydz', '2023-12-05', 'lifetime', 25000, 5, 50);
+Query OK, 1 row affected (0.01 sec)
+
+RROR 1366 (HY000): Incorrect integer value: '' for column 'penalty_amount' at row 1
+mysql> INSERT INTO member
+    -> VALUES (2, 'garima_sen','pune', '2053-11-08', 'annual', 1000, 3,null);
+Query OK, 1 row affected (0.01 sec)
+
+
+11) Modify the column Member_name. Decrease the width of the member
+name to 20 characters. (If it does not allow state the reason for that)
+
+
+mysql> alter table member
+    -> modify column member_name varchar(60);
+Query OK, 2 rows affected (0.12 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> desc member;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| Member_Id        | int         | NO   | PRI | NULL    |       |
+| member_name      | varchar(60) | YES  |     | NULL    |       |
+| member_Address   | varchar(50) | YES  |     | NULL    |       |
+| Account_opendate | date        | YES  |     | NULL    |       |
+| Membership_type  | varchar(20) | YES  |     | NULL    |       |
+| fees_paid        | int         | YES  |     | NULL    |       |
+| max_bookAllow    | int         | YES  |     | NULL    |       |
+| penalty_amount   | int         | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+12) Try to insert a record with Max_Books_Allowed = 110, Observe the
+error that comes.
+
+mysql> insert into member
+    -> (max_bookAllow)values
+    -> (110);
+ERROR 1364 (HY000): Field 'Member_Id' doesn't have a default value
+mysql>
+
+because of dont give primary key
+
+14) Add the constraints on columns max_books_allowed and penalty_amt
+as follows
+a. max_books_allowed < 100
+b. penalty_amt maximum 1000
+Also give names to the constraints.
+
+ alter table member
+    -> add constraint check(max_bookAllow <100);
+Query OK, 2 rows affected (0.10 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+ alter table member
+    -> add constraint check (penalty_amount <1000);
+Query OK, 2 rows affected (0.08 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+ CONSTRAINT `member_chk_1` CHECK ((`max_bookAllow` < 100)),
+ CONSTRAINT `member_chk_2` CHECK ((`penalty_amount` < 1000))
+
+15) Drop the table books.
+
+16) Create table Books again as per the schema description with the
+following constraints.
+a. Book_No – Primary Key
+b. Book_Name – Not Null
+c. Category – System, Fiction, Database, RDBMS, Others.
+
+
+mysql> create table books
+    -> (Book_Name varchar(20) primary key,
+    -> Book_No int not null,
+    -> category varchar(20));
+Query OK, 0 rows affected (0.03 sec)
+
+
+
+17) Insert data in Book table as follows:
+
+ysql> insert into books
+    -> values('physics',102,'system',450);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from books;
++-----------+---------+----------+------+
+| Book_Name | Book_No | category | cost |
++-----------+---------+----------+------+
+| physics   |     102 | system   |  450 |
++-----------+---------+----------+------+
+1 row in set (0.00 sec)
+
+
+19) View the data in the tables using simple SQL query.
+
+
+mysql> select * from books;
++-----------+---------+----------+------+
+| Book_Name | Book_No | category | cost |
++-----------+---------+----------+------+
+| physics   |     102 | system   |  450 |
++-----------+---------+----------+------+
+1 row in set (0.00 sec)
+
+> rename table lib_issue to  issue;
+Query OK, 0 rows affected (0.03 sec)
+
+
+22) Drop table Issue.
+23) As per the given structure Create table Issue again with following
+constraints.
+
+ Lib_Issue_Id-Primary key
+ Book_No- foreign key
+ Member_id - foreign key
+ Issue_date
+ Return_date
+
+
+
+ create table issue
+    -> (lib_issueId int primary key,
+    -> book_no int,
+    -> member_id int,
+    -> Book_Name varchar(20),
+    -> issue_date date,return_date date,
+    -> foreign key (Book_Name) references books(Book_Name),
+    -> foreign key (member_Id)references member(member_Id));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc issue;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| lib_issueId | int         | NO   | PRI | NULL    |       |
+| book_no     | int         | YES  |     | NULL    |       |
+| member_id   | int         | YES  | MUL | NULL    |       |
+| Book_Name   | varchar(20) | YES  | MUL | NULL    |       |
+| issue_date  | date        | YES  |     | NULL    |       |
+| return_date | date        | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+
+24) Insert following data into Issue table.
+
+
+mysql> desc issue;
+
+mysql> select * from issue;
++-------------+---------+-----------+-----------+------------+-------------+
+| lib_issueId | book_no | member_id | Book_Name | issue_date | return_date |
++-------------+---------+-----------+-----------+------------+-------------+
+|        7001 |     101 |         1 | NULL      | 2010-02-03 | NULL        |
+|        7002 |     102 |         2 | NULL      | 2010-02-04 | NULL        |
+|        7003 |     103 |         3 | NULL      | 2010-02-05 | NULL        |
+|        7004 |     104 |         4 | NULL      | 2010-02-06 | NULL        |
++-------------+---------+-----------+-----------+------------+-------------+
+4 rows in set (0.00 sec)
+
+
+mysql> insert into issue
+    -> (lib_issueId,book_no,member_id,issue_date)
+    -> values(7001,101,1,'2010-02-03'),
+    -> (7002,102,2,'2010-02-04'),
+    -> (7003,103,3,'2010-02-05'),
+    -> (7004,104,4,'2010-02-06');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+25) Remove the constraints on Issue table
+
+alter table issue
+drop constraint member_id
+references member(member-id);///dont checked on command line
+ 
+mysql> drop index Book_Name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> drop index Book_Name on issue;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> drop index member_id on issue;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc issue;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| book_no     | int         | YES  |     | NULL    |       |
+| member_id   | int         | YES  |     | NULL    |       |
+| Book_Name   | varchar(20) | YES  |     | NULL    |       |
+| issue_date  | date        | YES  |     | NULL    |       |
+| return_date | date        | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+5 row
+
+26) Insert a record in Issue table. The member_id should not exist in
+member table.
+
+mysql> insert into issue
+    -> (member_id) values(2333);
+Query OK, 1 row affected (0.01 sec)
+
+
+
+27) Now enable the constraints of Issue table. Observe the error
+   
+ERROR 1822 (HY000): Failed to add the foreign key constraint. Missing index for constraint 'fk_member_id' in the referenced table 'member'
+mys
+
+
+mysql> ALTER TABLE issue
+    -> ADD CONSTRAINT fk_member_id FOREIGN KEY (member_id)
+    -> REFERENCES member(member_id);
+Query OK, 4 rows affected (0.13 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> desc issue;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| book_no     | int         | YES  |     | NULL    |       |
+| member_id   | int         | YES  | MUL | NULL    |       |
+| Book_Name   | varchar(20) | YES  |     | NULL    |       |
+| issue_date  | date        | YES  |     | NULL    |       |
+| return_date | date        | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+32) Remove all the records from Issue table where member_ID is 1
+
+and Issue date in before 10-Dec-06.
+
+mysql> delete from issue
+    -> where issue_date = '2010-03-02';
+Query OK, 0 rows affected (0.01 sec)
+
