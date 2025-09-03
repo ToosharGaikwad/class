@@ -3,25 +3,13 @@
 #include<stdio.h>
 //void decript()
 void encript();
-
+//
 void main(){
- encript();
-// decript();
+// encript();
+ decript();
 }
-
-void encript(){
-	char str[]="TUshar";
-	int i=0;
-	while(str[i]!='\0'){
-		str[i]=str[i]+9;
-		i++;
-	}
-	printf("%s",str);
-}	
-	
-	
-	
-//	void decript(){
+//
+//void encript(){
 //	char str[]="TUshar";
 //	int i=0;
 //	while(str[i]!='\0'){
@@ -30,8 +18,20 @@ void encript(){
 //	}
 //	printf("%s",str);
 //}	
-//	
-//	
+	
+	
+	
+	void decript(){
+	char str[]="]^|qj{";
+	int i=0;
+	while(str[i]!='\0'){
+		str[i]=str[i]-9;
+		i++;
+	}
+	printf("%s",str);
+}	
+	
+	
 	
 	
 	
