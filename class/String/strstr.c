@@ -18,7 +18,7 @@ int main(){
 }
 
 int substring(char str1[],char str2[]){
-    int i,j,k,l1,l2;
+    int i,j,l1,l2;
     l1 = strlen(str1);
     l2 = strlen(str2);
 	 l1=l1-1;
