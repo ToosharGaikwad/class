@@ -18,7 +18,7 @@ void main(){
 	    	amount = amount - notes[i] * count;
 		}
 	}
-	 	}
+	}
 
  
  

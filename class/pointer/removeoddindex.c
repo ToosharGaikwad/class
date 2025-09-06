@@ -1,4 +1,4 @@
-// remove the value of odd index
+ // remove the value of odd index
 
 #include<stdio.h>
 
