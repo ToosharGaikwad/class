@@ -1,0 +1,16 @@
+q1 --> select name salary from employee order by desc;
+q2 --> select * from employee order by desc limit 5;
+q3 --> select * from employee offset 3 limit 8;
+q4 --> select count(*) from employee group by dept_id;
+q5 --> select avg(salary) from employee where avg(salary)>50000 group by dept;
+q6 --> select prod_name from product where category ="laptop";
+q7 --> select left(student_name ,3) as frist_three_char from 
+q8 --> select * from student where student_name like %A;
+q9 --> select order from product where order > 100 group by month
+q10 --> select total_sale,avg(sale) from sales where total_sale > 100000 group by category 
+q11 --> (a) 
+q12 --> (b)
+q13 --> (d)
+q14 --> (b)
+q15 --> (d)
+
