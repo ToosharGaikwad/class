@@ -1,9 +1,8 @@
+import java.util.Scanner;
 class selsman{
-
-int id;
+int id,salary;
 String name;
 double incentive;
-double salary;
 
 
 void setid(int id){
@@ -65,11 +64,25 @@ System.out.println(incentive);
 
 
 class selstest{
-public static void main(String []args){
+//public static void main1(String []args){
 
-selsman s1 = new selsman();
-s1.display();
-selsman s2 = new selsman(33,"sam",4332,332);
+
+//selsman s1 = new selsman();
+//s1.display();
+//selsman s2 = new selsman(33,"tusha",332,84844);
+//}
+
+
+
+public static void main(String []args){
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter id, Name, incentive, salary:");
+int id = sc.nextInt();
+String name = sc.next();
+double incentive = sc.nextDouble();
+double salary =  sc.nextDouble();
+
+System.out.println(id+name+incentive+salary);
 }
 
 }
