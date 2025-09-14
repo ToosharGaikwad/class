@@ -55,8 +55,9 @@ System.out.println("distance "+ distance);
 
 class testPl{
 public static void main(String []args){
+Scanner sc = new Scanner(System.in);
 plStudent ps = new plStudent();
-
+ps.
 ps.display();
 plStudent p = new plStudent("amazon" , "se",111);
 p.display();

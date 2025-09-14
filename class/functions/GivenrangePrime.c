@@ -15,7 +15,7 @@
 
       int printPrime(int first,int last){
        	
-		for(int n= first;n<last;n++){
+		for(int n = first;n<last;n++){
 			for(int i=2;i<n;i++){
 				if(n%i!=0){
 			

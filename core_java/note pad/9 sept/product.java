@@ -1,3 +1,4 @@
+import java.util.Scanner;
 class prod{
 int id,price,quantity;
 String name;
@@ -62,8 +63,20 @@ public static void main(String[] args){
 prod p = new prod();
 p.display();
 
-prod p1 = new prod(12,554,32,"gaurav");
-p1.display();
+Scanner sc  = new Scanner(System.in);
+System.out.println("enter id"); 
+int id = sc.nextInt();
+p.setid(id);
+sc.nextLine();
+System.out.println("enter name"); 
+String nm = sc.nextLine();
+p.setname(nm);
+
+System.out.println("enter quantity"); 
+int qt = sc.nextInt();
+p.setquantity(qt);
+
+p.display();
 
 
 }

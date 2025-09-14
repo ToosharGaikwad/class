@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class admin{
 int id,salary;
 double allowanc;
@@ -59,22 +61,29 @@ System.out.println("allowanc = "+allowanc);
 
 }
 class adtest{
-public static void main(String[] args){
+public static void main1(String[] args){
 admin a = new admin();
 a.display();
 
 admin a1 = new admin(12310,321,"sachine");
 a1.display();
 
-//a.setname("sadawarte");
-//a.setid(1223);
-//a.setsalary(53322);
-//a.setallowanc(2685);
-//a.display();
-
 
 
 }
+
+
+public static void main(String []args){
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter id, Name, allowance, salary:");
+int id = sc.nextInt();
+String name = sc.next();
+double allowance = sc.nextDouble();
+double salary =  sc.nextDouble();
+
+System.out.println(id+name+allowance+salary);
+}
+
 }
 
 
