@@ -50,7 +50,7 @@ class billTest{
 	public static void main(String[] args){
 	electricityBill e = new electricityBill("tushar" ,555,21);
 	
-	electricityBill.setratePerUnit(2);
+	//electricityBill.setratePerUnit(2);
 	e.calculateUnit();
 	e.display();
 }
