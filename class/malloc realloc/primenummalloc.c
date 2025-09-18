@@ -11,7 +11,7 @@ int* arr=(int*)malloc(sizeof(int)*10);
 	
 for(int j=2;i<arr[i];j++){
 	
-	if(arr[i]%2==0){
+	if(arr[i]%2!=0){
 		printf("number is prime %d",arr[i]);
 	}
    break;

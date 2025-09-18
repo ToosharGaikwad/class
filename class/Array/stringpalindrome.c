@@ -1,4 +1,4 @@
-
+  o
 #include<stdio.h>
 #include<string.h>
 int palendromestring(char str[]);
