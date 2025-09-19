@@ -1,2 +1,8 @@
 *.exe
 *.class
+# Ignore Eclipse/IDE metadata
+java workspace/
+*.class
+*.log
+*.dat
+*.cache
