@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 class Book {
-	Book[] brr = new Book[100];
+	int size = 100;
+	
 	String bookName, authorName, category;
 	int rating, bid, price;
 
@@ -16,7 +17,7 @@ class Book {
 	}
 
 	Book(String bookName, String authorName, int rating, int bid, int price, String category) {
-		super();
+		
 
 		this.bookName = bookName;
 		this.authorName = authorName;
@@ -24,14 +25,6 @@ class Book {
 		this.bid = bid;
 		this.price = price;
 		this.category = category;
-	}
-
-	public Book[] getBrr() {
-		return brr;
-	}
-
-	public void setBrr(Book[] brr) {
-		this.brr = brr;
 	}
 
 	public String getBookName() {
@@ -93,13 +86,18 @@ class Book {
 
 }
 
-class Liabrary {
+    class Liabrary {
 	Scanner sc = new Scanner(System.in);
-
-	Book[] bookArr = new Book[2];
-
+	
+	int size = 5;
+	Book[] bookArr = new Book[size];
+    int count =0;
+    
 	Liabrary() {
-		for (int i = 0; i < bookArr.length; i++) {
+
+	  
+		int length =0;
+		for (int i = 0; i < length; i++) {
 			System.out.println("Enter book name:");
 
 			String bookName = sc.next();
@@ -113,14 +111,55 @@ class Liabrary {
 			int rating = sc.nextInt();
 			System.out.println("Enter book category:");
 			String category = sc.next();
-
+			
 			bookArr[i] = new Book(bookName, authorName, rating, bid, price, category);
+			count++;
 		}
 
-	}
 
+//		   Hardcoded books instead of asking user
+	    bookArr[count++] = new Book("Math", "John", 5, 101, 500, "Science");
+	    bookArr[count++] = new Book("English", "Mary", 4, 102, 300, "Language");
+
+	}
+	
+	void addbook() {
+		
+		if(count>=size) {
+			size = size +5;
+			Book[] bookArr2 = new Book[size];
+			for(int i=0;i<count;i++) {
+				bookArr2[i] = bookArr[i]; 
+				
+			}
+		System.out.println("size reallocated ");
+		bookArr = bookArr2;
+		}
+			
+		System.out.println("Enter book name:");
+
+		String bookName = sc.next();
+		System.out.println("Enter auther name:");
+		String authorName = sc.next();
+		System.out.println("Enter book price :");
+		int price = sc.nextInt();
+		System.out.println("Enter book id:");
+		int bid = sc.nextInt();
+		System.out.println("Enter book rating:");
+		int rating = sc.nextInt();
+		System.out.println("Enter book category:");
+		String category = sc.next();
+		
+		bookArr[count] = new Book(bookName, authorName, rating, bid, price, category);
+		count++;
+	
+	}
 	void display() {
-		for (int i = 0; i < bookArr.length; i++) {
+		 if (count == 0) {
+	            System.out.println("No books in library yet.");
+	            return;
+	        }
+		for (int i = 0; i < count; i++) {
 			bookArr[i].display(); // this line called book class array because bookArr is object of book class and
 									// we not "this" for current invoking object
 		}
@@ -145,11 +184,11 @@ class Liabrary {
 	}// function end here
 
 	boolean searchbookByid() {
-		System.out.println("Enter the book id you want to search book");
+		
 		int newId = sc.nextInt();
 
 		for (int i = 0; i < bookArr.length; i++) {
-			if (bookArr[i].bid == newId) {
+			if (bookArr[i] != null && bookArr[i].bid == newId) {
 				System.out.println("The book is "+ bookArr[i].bookName+bookArr[i].bid+bookArr[i].price+ bookArr[i].category+bookArr[i].rating);
 
 				return true;
@@ -158,19 +197,23 @@ class Liabrary {
 		}
 		return false;
 	}
-	
-	
-	
 	boolean deletebookbyname(String newhint){
 	boolean deletecount = false;
 	
 	for (int i = 0; i < bookArr.length; i++){
 		if (bookArr[i] != null && bookArr[i].bookName.toLowerCase().contains(newhint.toLowerCase())) {
 			System.out.println("The book is "+ bookArr[i].bookName);
-			bookArr[i] = bookArr[i++];
-			
+			bookArr[i] = bookArr[i+1];
+			 
+			  for (int j = i; j < count - 1; j++) {
+	                bookArr[j] = bookArr[j + 1];
+	            }
+			bookArr[count-1] = null;
 			deletecount = true;
+			count--;
+			break;
 		}
+		
 	}
 
 	if (!deletecount) {
@@ -205,11 +248,11 @@ boolean updateBook() {
 
 boolean deletebookbyid() {
 	
-		System.out.println("Enter the book id you want to search book");
+		System.out.println("Enter the book id you want to delete book");
 		int newId = sc.nextInt();
 
 		for (int i = 0; i < bookArr.length; i++) {
-			if (bookArr[i].bid == newId) {
+			if (bookArr[i] != null &&bookArr[i].bid == newId) {
 				System.out.println("The book is "+ bookArr[i].bookName);
 				bookArr[i] = bookArr[i++];
 				return true;
@@ -218,7 +261,21 @@ boolean deletebookbyid() {
 		}
 		return false;           // not found 
 }
-	           
+
+void sortbyprice() {
+	 Book temp;
+
+	for(int i=0; i<bookArr.length; i++) {
+		for(int j=0; j<count-1; j++) {
+			if(bookArr[j] != null&&bookArr[j].price>bookArr[j+1].price) {
+				temp = bookArr[j];
+				bookArr[j] = bookArr[j + 1];
+				bookArr[j + 1] = temp;
+			}
+		}
+		
+	}
+}          
 
 }
 
@@ -227,49 +284,87 @@ class BookTest {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		// TODO Auto-generated method stub
-		Book b = new Book();
-		b.display();
-
 		Liabrary l = new Liabrary();
-		l.display();
+		// TODO Auto-generated method stub
+		 boolean exit = false;
 
-		System.out.println("search book here By Name");
-		String hint = sc.next();
-		boolean found = l.searchbookByNamehint(hint); // capture return
-		if (found) {
-			System.out.println("✔ Book search successful");
-		} else {
-			System.out.println("✘ Book not found");
-		}
+	        while (!exit) {
+	            System.out.println("\n--- Library Menu ---");
+	            System.out.println("1. Display all books");
+	            System.out.println("2. Add a book");
+	            System.out.println("3. Search book by name");
+	            System.out.println("4. Search book by ID");
+	            System.out.println("5. Delete book by name");
+	            System.out.println("6. Delete book by ID");
+	            System.out.println("7. Update a book");
+	            System.out.println("8. Sort books by price");
+	            System.out.println("9. Exit");
+	            System.out.print("Enter your choice: ");
 
-		
-		
-		boolean searchBid = l.searchbookByid();
-		if (!searchBid) {
-			System.out.println("Book is not found");
-		} else {
-			System.out.println("book is found ");
-		}
+	            int choice = sc.nextInt();
+	            sc.nextLine(); // consume newline
 
-		
-		System.out.println("delete book here By Name");
-		String newhint = sc.next();
-		boolean delete = l.deletebookbyname(newhint);
-		if (!delete) {
-			System.out.println("Book is not found");
-		} else {
-			System.out.println("book was deleted successfully ");
-		}
-	
-		boolean deletebid = l.deletebookbyid();
-		if(deletebid) {
-			System.out.println("book was deleted ");
-		}else {
-			System.out.println("book is not found");
-			
-		}
-	
+	            switch (choice) {
+	                case 1:
+	                    l.display();
+	                    break;
+	                case 2:
+	                    l.addbook();
+	                    break;
+	                case 3:
+	                    System.out.print("Enter book name to search: ");
+	                    String nameHint = sc.nextLine();
+	                    if (l.searchbookByNamehint(nameHint)) {
+	                        System.out.println("✔ Book search successful");
+	                    } else {
+	                        System.out.println("✘ Book not found");
+	                    }
+	                    break;
+	                case 4:
+	                    if (!l.searchbookByid()) {
+	                        System.out.println("Book not found by ID");
+	                    } else {
+	                        System.out.println("Book found by ID");
+	                    }
+	                    break;
+	                case 5:
+	                    System.out.print("Enter book name to delete: ");
+	                    String deleteName = sc.nextLine();
+	                    if (!l.deletebookbyname(deleteName)) {
+	                        System.out.println("Book not found to delete");
+	                    } else {
+	                        System.out.println("Book deleted successfully");
+	                    }
+	                    break;
+	                case 6:
+	                    if (!l.deletebookbyid()) {
+	                        System.out.println("Book not found to delete by ID");
+	                    } else {
+	                        System.out.println("Book deleted successfully by ID");
+	                    }
+	                    break;
+	                case 7:
+	                    System.out.println("Enter new book details (name, author, price, id, rating, category):");
+	                    if (l.updateBook()) {
+	                        System.out.println("Book updated successfully");
+	                    } else {
+	                        System.out.println("Book not found to update");
+	                    }
+	                    break;
+	                case 8:
+	                    l.sortbyprice();
+	                    System.out.println("Books sorted by price:");
+	                    l.display();
+	                    break;
+	                case 9:
+	                    exit = true;
+	                    System.out.println("Exiting library menu...");
+	                    break;
+	                default:
+	                    System.out.println("Invalid choice! Try again.");
+	            }
+	        }
+
+	    }
 	}
-
-}
+	

@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 class emp {
 	int id;
@@ -143,9 +144,9 @@ class Testemployee {
 		 e.display();
 //		 e = new Areamanger(22 , "ranjeet", 6653.2,552.2,45, "shivajiNagar");
 //		 e.display();
-		
-	
-	}
+		 Scanner sc = new Scanner(System.in);
+		 
+
 
 }
 
