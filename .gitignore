@@ -6,3 +6,7 @@
 *.log
 *.dat
 *.cache
+*.setting
+*.Setting
+*.classpath
+*.project
