@@ -7,9 +7,6 @@ public class A {
 	  protected void myfunA(){
 		System.out.println("A");
 	}
-	
-	
-	
 
 }
 

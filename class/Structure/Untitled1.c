@@ -1,14 +1,15 @@
 #include<stdio.h>
 void main(){
-int arr[] = {1,2,3,4,5,6,8,9,10,11,13,15};
+int arr[] = {2,3,4,5,6,8,9,10,11,13,15,17,20,21,23};
 
 int  size = sizeof(arr)/sizeof(int);
 
 
 for(int i=0;i<size;i++){
 	int flag = 0;
-	if(arr[i]!=1){
-		
+	if(arr[i]<2){
+		printf("no is not valid enter greter number");
+		break;
 		
 	}
 for(int j=2;j<size/2;j++){
