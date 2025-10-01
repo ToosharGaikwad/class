@@ -24,7 +24,7 @@ void countElement(){
 		for(i=0;i<size;i++){
 			if(freq[i] == 0)
 			continue;
-//	 int count =1;
+	 int count =1;
 	for(int j=i+1;j<size;j++){
 		if(arr[i]==arr[j]){
 			count++;
