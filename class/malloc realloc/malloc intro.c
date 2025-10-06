@@ -71,33 +71,33 @@ int inseartEle(int* arr,int* size){
 //	}
 //}
 
-
-void inseartEle(int*,int*,int );
-void createArray(n);
-void storeArray(int,int);
-void main(){
-	int n =10;
-	int* arr = createArray(n);
-	storeArray(arr,8);
-	inseartEle(arr,&n,12);
-}
-void inseartEle(int* arr,int* n,int ele){
-	for(int i=0;i<n;i++){
-		printf("%d",arr[i]);
-	}
-		
-	arr[*n] = ele;
-	(*n)++;
-}
-void createArray(){
-	int* arr = malloc(sizeof(int)*15);
-	return arr;
-}
-void storeArray(int* arr,5){
-	for(int i=0;i<size;i++){
-		scanf("%d"&arr[i]);
-	}
-}
+//
+//void inseartEle(int*,int*,int );
+//void createArray(n);
+//void storeArray(int,int);
+//void main(){
+//	int n =10;
+//	int* arr = createArray(n);
+//	storeArray(arr,8);
+//	inseartEle(arr,&n,12);
+//}
+//void inseartEle(int* arr,int* n,int ele){
+//	for(int i=0;i<n;i++){
+//		printf("%d",arr[i]);
+//	}
+//		
+//	arr[*n] = ele;
+//	(*n)++;
+//}
+//void createArray(){
+//	int* arr = malloc(sizeof(int)*15);
+//	return arr;
+//}
+//void storeArray(int* arr,5){
+//	for(int i=0;i<size;i++){
+//		scanf("%d"&arr[i]);
+//	}
+//}
 
 
 

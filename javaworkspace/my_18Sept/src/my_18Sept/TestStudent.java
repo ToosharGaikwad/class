@@ -62,10 +62,10 @@ class placeStudent extends student{
 	 placeStudent() {
 		super();
 		System.out.println("default constructer");
-		this.id = id;
-		this.rollNo = rollNo;
-		this.persentage = persentage;
-		this.cName = cName;
+		this.id = 23;
+		this.rollNo = 29;
+		this.persentage = 55;
+		this.cName = "infosys";
 		this.designation= designation;
 	}
 	

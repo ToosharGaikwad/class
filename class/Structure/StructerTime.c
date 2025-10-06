@@ -37,34 +37,29 @@ struct Time{
 struct Time addtime(struct Time t);
 void display(t1);
 #include<stdio.h>
-void main(){N
+void main(){
 	struct Time t1,t2;
 	
-      t1.hours = 5;
-	 t1.minits = 542;
 	 t1.second = 32;
 	 display(t1);
 	t1 = addtime(t1);
-	
 }
 
 
- struct Time addtime(struct Time t){
+ struct Time addtime(Time t){
 	
 	int tsec = t.hours*3600+t.minits*60+t.second;
-	t.hours = tsec/3600;
+	t.hours = tsec/3600;struct 
 	int t1min = tsec%3600;
 	t.minits = t1min/60;
 	t.second= t1min%60;
-	return t;
 }
 
-	void display(struct Time t){
+	void display( Time t){
 		printf(" %d :%d :%d",t.hours,t.minits,t.second);
-	}
 
 
-
+              struct
 
 
 

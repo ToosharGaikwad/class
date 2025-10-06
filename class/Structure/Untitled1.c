@@ -6,31 +6,15 @@ int  size = sizeof(arr)/sizeof(int);
 
 
 for(int i=0;i<size;i++){
-	int flag = 0;
-	if(arr[i]<2){
-		printf("no is not valid enter greter number");
-		break;
-		
-	}
+	int flag = 0;	
 for(int j=2;j<size/2;j++){
 		if(arr[i]%j==0){
 		flag =1;
 		break;
-		
 	}	
 }
      if(flag==0){
 		printf("number is Prime %d" ,arr[i]);
-	}
-	
+	}	
 }
-
-
-	
-	
-	
-	
-	
-	
-	
 }

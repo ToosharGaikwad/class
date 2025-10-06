@@ -1,7 +1,7 @@
 
 
 void main(){
-	int arr[]={1,3,4};
+	int arr[]={1,3,6,5,9,4};
 	int size = sizeof(arr)/sizeof(int);
 	for(int i=0;i<size/2;i++){
 	 int temp;

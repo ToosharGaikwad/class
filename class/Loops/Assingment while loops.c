@@ -206,13 +206,86 @@ void main(){
 //////}   commented because not complited
 
 
+// practice of mock question date is 4/10 /2025;
+//int rem;
+//int rev=0;
+//int no = 1261;
+//int temp = no;
+//    for(int i= 0;i<4;i++){
+//    		rem= no%10;
+//    		rev = rev * 10+rem;
+//            no = no/10;
+//	   if(rev == temp){
+//		printf("no is palindrome",no);
+//	}else{
+//		printf("not palindrome");
+//		break;
+//	}
+//
+//	}
 
+//   strong number
+
+	int no = 145;
+	int temp = no;
+	int rem;
+	int sum = 0;
+	while(no>0){
+		rem= no%10;
+		no = no/10;
+	int fact =1;
+		
+			for(int i= 1;i<=rem;i++){
+			fact = fact*i;
+	}
+		sum = sum+fact;
+	
+
+	}
+
+	if(sum==temp){
+			printf("no is strong %d", temp);}
+		else{
+			printf("not strong");
+		
+		}
 	
 }
 
-
-
-
-
+//	int no = 422;
+//	int temp =no;
+//	int rem;
+//	int sum=0;
+//		int count =0;
+////	while(no>0){
+////	
+////		
+////	rem	=no%10;
+////	no = no/10;
+////		count++;
+////		}
+////		printf("count = %d",count);
+//		
+//	while(no>0){
+//		
+//		rem	=no%10;
+//		no = no/10;
+//		count++;
+//		for(int i=0;i<count;i++){
+//			rem = rem*rem;
+//			sum +=rem;
+//			
+//			
+//		}
+//		printf("%d ",sum);
+//	}
+//	
+//	}
+//
+//
+//
+//
+//
+//
 
 

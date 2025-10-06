@@ -91,7 +91,7 @@ class Book {
 	
 	int size = 5;
 	Book[] bookArr = new Book[size];
-    int count =0;
+    int count =5;
     
 	Liabrary() {
 
@@ -118,9 +118,17 @@ class Book {
 
 
 //		   Hardcoded books instead of asking user
+	    
+	}
+	void hardcoded()
+	{
+		int length = 5;
+		for(int i = 0;i<length;i++)
+		bookArr[count++] = new Book("Math", "John", 5, 101, 500, "Science");
+	    bookArr[count++] = new Book("English", "Mary", 4, 102, 300, "Language");
 	    bookArr[count++] = new Book("Math", "John", 5, 101, 500, "Science");
 	    bookArr[count++] = new Book("English", "Mary", 4, 102, 300, "Language");
-
+	    bookArr[count++] = new Book("Math", "John", 5, 101, 500, "Science");
 	}
 	
 	void addbook() {

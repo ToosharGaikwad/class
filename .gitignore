@@ -1,7 +1,6 @@
-*.exe
-*.class
-# Ignore Eclipse/IDE metadata
 
+
+*.exe
 *.class
 *.log
 *.dat

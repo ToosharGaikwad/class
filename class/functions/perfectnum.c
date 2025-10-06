@@ -21,8 +21,9 @@ void perfectnum(int* first,int* last){
 	if(i%j==0){
 		sum =sum +j;
 		
+		}
 	}
-	   }	if(sum==i){
+	   	if(sum==i){
 		printf("number is perfect %d \n",i);
 }
 }

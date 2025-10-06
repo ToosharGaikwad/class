@@ -8,12 +8,9 @@
 			  mystrrev(str);
 			  printf("reversed string %s",str);
 			}
-		
-		
-
 		void mystrrev(char* str){
 				int l = strlen(str);
-				char ch,c;
+				char ch;
 	       	printf("%d",l);
 	
 			
