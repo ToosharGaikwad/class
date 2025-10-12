@@ -1,43 +1,47 @@
 package mainApp;
 
-public class Employee{
-		public int id;
-		public Double salary;
-		public String name;
-
-		public void setid(int id) {
-			this.id = id;
-		}
-
-		public  int getid(int id) {
-			return this.id;
-		}
-
-		public void setsalary(double salary) {
-			this.salary = salary;
-		}
-
-		public double getsalary() {
-			return this.salary;
-		}
-
-		public void setname(String name) {
-			this.name = name;
-		}
-
-		public String getname() {
-			return this.name;
-		}
-
-		public Employee() {
-			this.id = 88;
-			this.name = "yuvraj";
-			this.salary = 8878.0;
-		}
-
-		public Employee(int i, String n, double sal) {
-			this.id = i;
-			this.name = n;
-			this.salary = sal;
-		}		
+import java.util.*;
+public abstract class Employee {
+	public int id;
+	public String name;
+	public double salary;
+	public Employee() {
+		// TODO Auto-generated constructor stub
+		this.id = 0;
+		this.name = "Not Given";
+		this.salary = 500000;
 	}
+	public Employee(int id, String name, double salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	public abstract double calculateSalary(); 
+	@Override
+	public String toString() {
+		
+		return "ID:"+this.id +"\nName: "
+				+this.name+"\nSalary"+
+				this.salary;
+	}
+	
+}

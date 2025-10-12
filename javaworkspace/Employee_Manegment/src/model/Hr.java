@@ -10,9 +10,9 @@ public class Hr extends Employee{
 	  double commition;
 	 public Hr() {
 		
-		this.commition = 3332.2;
+		this.commition = 65364.2;
 	}
-	 Hr(double commition,int id,double salary,String name) {
+	 public Hr(int id,String name,double salary,double commition) {
 			super();
 			this.commition = commition;
 		} 
@@ -25,9 +25,14 @@ public class Hr extends Employee{
 	 }
 	 @Override
 	 public String toString() {
-		return "Hr [commition=" + commition + ", salary=" + (salary +commition)+"]";
+		return "Hr [ name = " + getName() + "commition=" + commition + ", salary=" + (getSalary() +commition)+"]";
 	 }
-	 
+	 @Override
+	 public double calculateSalary() {
+		 
+		return  + (getSalary()+this.commition) ;
+	 }
+	  
 
 	}// hr end here 
 

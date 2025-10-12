@@ -6,35 +6,74 @@
     <title>Document</title>
   </head>
   <body>
-    <h2>Firstbit solutions</h2>
-    <img
-      src="https://media.licdn.com/dms/image/v2/C4E0BAQF3Egpq39BCtA/company-logo_200_200/company-logo_200_200/0/1630613480147?e=2147483647&v=beta&t=Ck073OiBLr0b9fSp2TSsh-c1WdVrxNcvXkJfbp1wpaU"
-      alt=""
-    />
-    <a href="https://firstbitsolutions.com/">
-      <p>Firstbit solutions.com</p>
-    </a>
-    <hr />
-    <p style="font-size: 25px">
-      <b><u>your future begins here</u></b>
-    </p>
-    <p style="font-size: 20px">Student Resistration form</p>
-    <label for="input">Full Name</label><br />
-    <input type="text" name="fullname" />
-    <br />
+    <form action="/dummy">
+      <h2>Firstbit solutions</h2>
+      <img
+        src="https://media.licdn.com/dms/image/v2/C4E0BAQF3Egpq39BCtA/company-logo_200_200/company-logo_200_200/0/1630613480147?e=2147483647&v=beta&t=Ck073OiBLr0b9fSp2TSsh-c1WdVrxNcvXkJfbp1wpaU"
+        alt=""
+      />
+      <a href="https://firstbitsolutions.com/">
+        <p>Firstbit solutions.com</p>
+      </a>
+      <hr />
+      <p style="font-size: 25px">
+        <b><u>your future begins here</u></b>
+      </p>
+      <p style="font-size: 20px">Student Resistration form</p>
+      <label for="input">Full Name</label><br />
+      <input type="text" name="fullname" />
+      <br />
 
-    <label for="input">email id </label><br />
-    <input type="email" name="email" />
-    <br />
-    <label for="input">Mobile Number</label><br />
-    <input type="number" name="number" />
-    <br />
-    <label for="input">date</label><br />
-    <input type="date" name="date" />
-    <br />
+      <label for="input">email id </label><br />
+      <input type="email" name="email" />
+      <br />
+      <label for="input">Mobile Number</label><br />
+      <input type="number" name="number" />
+      <br />
+      <label for="input">date</label><br />
+      <input type="date" name="date" />
+      <br />
+      <p style="font-size: 20px"><b>gender</b></p>
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="male">female</label><br />
 
-    <h3>Gender</h3>
-    <label> <input type="redio" />male </label>
-    <label> <input type="redio" />female </label>
+      <input type="radio" id="male" name="gender" value="Male" />
+      <label for="male">Male</label><br />
+      <p><b>Courses Interested in :</b></p>
+
+      <input
+        type="checkbox"
+        value="python fullstack"
+        id="py"
+        name="python "
+      />python
+      <br />
+      <input
+        type="checkbox"
+        value="python fullstack"
+        id="py"
+        name="java fullstack "
+      />java fullstack
+      <br />
+      <input
+        type="checkbox"
+        value="python fullstack"
+        id="py"
+        name="data science "
+      />data science
+      <p><b>preffered batch time :</b></p>
+      <select name="" id="">
+        <option value="select">select</option>
+        <option value="11 to 12">11 to 12</option>
+        <option value="12 to 2">12 to 02 PM</option>
+      </select>
+      <br /><br />
+      <textarea name="intro" id="it">Write About Yourself</textarea>
+      <p><b>Rate yourself Current skiil level</b></p>
+      <input type="number" name="rate" id="" />
+      <br />
+      <input type="submit" />
+      <input type="reset" />
+    </form>
   </body>
 </html>

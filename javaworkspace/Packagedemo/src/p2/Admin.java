@@ -10,7 +10,7 @@ public Admin() {
 	this.allowance = 200;
 }
 
-public Admin(double allowance,int id, String name, double sal) {
+public Admin(int id,String name,double sal,double allowance) {
 	super();
 	this.allowance = allowance;
 	

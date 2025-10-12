@@ -10,7 +10,7 @@ public class Admin extends Employee{
 		this.allowance = 200;
 	}
 
-	public Admin(double allowance,int id, String name, double salary) {
+	public Admin(int id,String name, double salary,double allowance ) {
 		super();
 		this.allowance = allowance;
 		
@@ -26,11 +26,17 @@ public class Admin extends Employee{
 
 	
 	public double calsal() {
-		return this.getsalary()+allowance;
+		return this.getSalary()+allowance;
 	}
 	@Override
 	public String toString() {
 		return "salary "+ (salary + allowance);
+	}
+
+	@Override
+	public double calculateSalary() {
+		// TODO Auto-generated method stub
+		return getSalary()+allowance;
 	}
 
 	}
