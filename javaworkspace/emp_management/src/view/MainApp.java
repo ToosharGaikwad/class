@@ -95,6 +95,7 @@ public class MainApp {
 
 			case 5:
 				employees = dao.getAllEmployee();
+				System.out.println(employees);
 				break;
 
 			case 6:

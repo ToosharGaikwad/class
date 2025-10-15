@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-class Student{
+class Student1{
 	
 
 			int roll;
@@ -13,14 +13,14 @@ class Student{
 
 		
 
-			public Student() {
+			public Student1() {
 				this.roll = 101;
 				this.marks = 7;
 				this.name = "not given";
 
 			}
 
-			public Student(int id, double marks, String name) {
+			public Student1(int id, double marks, String name) {
 				this.roll = id;
 				this.marks = marks;
 				this.name = name;
@@ -62,8 +62,8 @@ class Student{
 
 		@Override
 		public int compare(Object o1, Object o2) {
-			Student s1 = (Student)o1;
-			Student s2 = (Student)o2;
+			Student1 s1 = (Student1)o1;
+			Student1 s2 = (Student1)o2;
 			
 			return (int)(s1.marks-s2.marks);
 		}
@@ -74,12 +74,12 @@ public class Testcomparator {
 
 	public static void main(String[] args) {
 		
-		ArrayList<Student> a1 = new ArrayList<Student>();
-			a1.add(new Student(57, 450, "Sachin"));
-			a1.add(new Student(94, 600, "Rahul"));
-			a1.add(new Student(88, 700, "Dhoni"));
-			a1.add(new Student(94, 600, "Rahul"));
-			a1.add(new Student(94, 100, "Rahul"));
+		ArrayList<Student1> a1 = new ArrayList<Student1>();
+			a1.add(new Student1(57, 450, "Sachin"));
+			a1.add(new Student1(94, 600, "Rahul"));
+			a1.add(new Student1(88, 700, "Dhoni"));
+			a1.add(new Student1(94, 600, "Rahul"));
+			a1.add(new Student1(94, 100, "Rahul"));
 			
 			 MyMarkcompartor m = new  MyMarkcompartor();
 			Collections.sort(a1,m);

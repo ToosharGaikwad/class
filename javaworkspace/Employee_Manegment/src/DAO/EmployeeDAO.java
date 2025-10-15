@@ -1,3 +1,98 @@
+package DAO;
+
+import java.util.ArrayList;
+
+import mainApp.Employee;
+import model.Hr;
+import model.Admin;
+import model.SalesManager;
+public class EmployeeDAO {
+	static ArrayList <Employee> employees = new ArrayList<Employee>();
+	static {
+		employees.add(new Hr(101,"sanjeev",50000,3200));
+		
+		
+	    employees.add(new Hr(102, "raju", 48000, 4500));
+	    employees.add(new Hr(103, "priyanka", 47000, 4000));
+	   employees.add( new SalesManager(201, "Karan", 60000, 12, 8000));
+	    employees.add( new SalesManager(202, "Meena", 58000, 15, 7500));
+	    employees.add( new SalesManager(203, "Rohit", 62000, 10, 9000));
+	   employees.add(new Admin( 301, "Pragati", 70000, 10000));
+	   employees.add( new Admin(302, "Isha", 68000, 9500));
+	   employees.add( new Admin(303, "Pooja", 72000, 11000)); 
+	    employees.add( new Admin(304, "Shubham", 75000, 12000));
+	}
+	public boolean addEmployee(Employee e) {
+       if(employees!=null) {
+           
+            return employees.add(e);
+        } 
+        return false;
+    }
+	
+    public Employee searchEmployeeById(int id) {
+        for (int i = 0; i <employees.size(); i++) {
+            if (employees.get(i).getId() == id) {
+                return employees.get(i);
+            }
+        }
+        return null;
+    }
+
+    public Employee searchByName(String newName) {
+        for (int i = 0; i <employees.size(); i++) {
+        	if (employees.get(i).getName().trim().equalsIgnoreCase(newName.trim())) {
+        	    return employees.get(i);
+        	}
+        }
+        return null;
+    }
+  
+    public boolean updateEmployee(int id, double newSalary) {
+        Employee emp = searchEmployeeById(id);
+        if (emp != null) {
+            emp.setSalary(newSalary);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean deleteEmployee(int id) {
+    	Employee emp = searchEmployeeById(id);
+            if (emp != null) {
+               employees.remove(emp);
+               
+//                employees = null;
+                return true;
+            
+        }
+        return false;
+    }
+ 
+   public ArrayList <Employee> getAllEmployees(){
+	   return employees;
+   }
+
+   
+   
+
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+//
+//
+//
+//
 //package DAO;
 //
 //import java.util.ArrayList;
@@ -109,122 +204,11 @@
 
 
 
-package view;
 
-import java.util.ArrayList;
-import java.util.Scanner;
 
-import controller.EmployeeDAO;
-import model.Admin;
-import model.Employee;
-import model.HR;
-import model.SalesManager;
 
-public class MainApp {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		EmployeeDAO dao = new EmployeeDAO();
-		ArrayList<Employee> employees=null;
-		int choice;
-		do {
-			System.out.println("\n===== Employee Management Menu =====");
-			System.out.println("1. Add Employee");
-			System.out.println("2. Search Employee");
-			System.out.println("3. Update Employee");
-			System.out.println("4. Delete Employee");
-			System.out.println("5. Display All Employees");
-			System.out.println("6. Calculate Salary of Each Employee");
-			System.out.println("0. Exit");
-			System.out.print("Enter your choice: ");
-			choice = sc.nextInt();
 
-			switch (choice) {
-			case 1:
-				System.out.println("Enter Employee Type (1-HR, 2-Admin, 3-SalesManager): ");
-				int type = sc.nextInt();
 
-				System.out.print("Enter ID: ");
-				int id = sc.nextInt();
-				sc.nextLine();
-				System.out.print("Enter Name: ");
-				String name = sc.nextLine();
-				System.out.print("Enter Base Salary: ");
-				double salary = sc.nextDouble();
 
-				if (type == 1) {
-					System.out.print("Enter Commission: ");
-					double comm = sc.nextDouble();
-					dao.addEmployee(new HR(id, name, salary, comm));
-					System.out.println("HR added successfully!");
-				} else if (type == 2) {
-					System.out.print("Enter Allowance: ");
-					double allowance = sc.nextDouble();
-					dao.addEmployee(new Admin(id, name, salary, allowance));
-					System.out.println("Admin added successfully!");
-				} else if (type == 3) {
-					System.out.print("Enter Target: ");
-					int target = sc.nextInt();
-					System.out.print("Enter Incentive per Target: ");
-					double incentive = sc.nextDouble();
-					dao.addEmployee(new SalesManager(id, name, salary, target, incentive));
-					System.out.println("Sales Manager added successfully!");
-				} else {
-					System.out.println("Invalid Type!");
-				}
-				break;
-
-			case 2:
-				System.out.print("Enter ID to search: ");
-				id = sc.nextInt();
-				Employee e = dao.searchEmployeeById(id);
-				if (e != null)
-					System.out.println("Found: " + e);
-				else
-					System.out.println("Employee not found.");
-				break;
-
-			case 3:
-				System.out.print("Enter ID to update: ");
-				id = sc.nextInt();
-				System.out.print("Enter New Salary: ");
-				salary = sc.nextDouble();
-				if (dao.updateEmployee(id, salary))
-					System.out.println("Updated successfully!");
-				else
-					System.out.println("Employee not found.");
-				break;
-
-			case 4:
-				System.out.print("Enter ID to delete: ");
-				id = sc.nextInt();
-				if (dao.deleteEmployee(id))
-					System.out.println("Deleted successfully!");
-				else
-					System.out.println("Employee not found.");
-				break;
-
-			case 5:
-				employees = dao.getAllEmployee();
-				break;
-
-			case 6:
-				employees = dao.getAllEmployee();
-				for (int i = 0; i < employees.size(); i++) {
-					System.out.println(employees.get(i).getName() + " → Final Salary: " + employees.get(i).calculateSalary());
-				}
-				break;
-
-			case 0:
-				System.out.println("Exiting... Goodbye!");
-				break;
-
-			default:
-				System.out.println("Invalid choice! Try again.");
-			}
-		} while (choice != 0);
-
-		sc.close();
-	}
-}
 

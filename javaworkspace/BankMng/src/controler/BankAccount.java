@@ -2,7 +2,7 @@ package controler;
 
 import java.util.Date;
 
-public abstract class Account {
+public abstract class BankAccount {
 	int accountBal;
 	int accountNumber;
 	String holderName;
@@ -16,7 +16,7 @@ public abstract class Account {
 	
 	
 	
-	public Account(int accountBal, int accountNumber, String holderName, String holderAddress, String accountType,
+	public BankAccount(int accountBal, int accountNumber, String holderName, String holderAddress, String accountType,
 			Date closeDate, int[] transaction) {
 		
 		this.accountBal = accountBal;
@@ -66,13 +66,13 @@ public abstract class Account {
 		return interestRate;
 	}
 	public static void setInterestRate(int interestRate) {
-		Account.interestRate = interestRate;
+		BankAccount.interestRate = interestRate;
 	}
 	public static int getIfscCode() {
 		return ifscCode;
 	}
 	public static void setIfscCode(int ifscCode) {
-		Account.ifscCode = ifscCode;
+		BankAccount.ifscCode = ifscCode;
 	}
 	public Date getOpentDate() {
 		return opentDate;
@@ -97,7 +97,7 @@ public abstract class Account {
 	
 	
 	abstract void withdraw();
-	abstract void display();
+	public abstract void display();
 	
 	public void calculateInterest(){}
 	void diposite(){}

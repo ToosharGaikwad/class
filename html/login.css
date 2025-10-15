@@ -98,3 +98,13 @@ div[lcs] {
   font-size: 13px;
   color: #333;
 }
+.fa-heart {
+  color: black;
+  transition: color 0.3s ease;
+}
+
+/* When hovered, turn red and change to filled heart */
+.fa-heart:hover {
+  color: red;
+  font-weight: 900; /* makes it look filled like fa-solid */
+}
