@@ -1,0 +1,16 @@
+.loginform {
+  background-color: aqua;
+  border: black solid 1px;
+  width: 300px;
+  height: 300px;
+}
+.logo {
+  background-color: rgb(181, 201, 1);
+  border: black solid 1px;
+  width: 300px;
+  height: 300px;
+}
+.maincontainer {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}

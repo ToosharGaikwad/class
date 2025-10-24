@@ -11,7 +11,7 @@ public class Admin extends Employee{
 	}
 
 	public Admin(int id,String name, double salary,double allowance ) {
-		super();
+		super(id,name,salary);
 		this.allowance = allowance;
 		
 	}
@@ -30,9 +30,8 @@ public class Admin extends Employee{
 	}
 	@Override
 	public String toString() {
-		return "salary "+ (salary + allowance);
+		return "salary "+ (salary + allowance) +" name = "  + name + " id = " + id;
 	}
-
 	@Override
 	public double calculateSalary() {
 		// TODO Auto-generated method stub

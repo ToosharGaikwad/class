@@ -13,7 +13,7 @@ public class Hr extends Employee{
 		this.commition = 65364.2;
 	}
 	 public Hr(int id,String name,double salary,double commition) {
-			super();
+			super(id,name,salary);
 			this.commition = commition;
 		} 
 	 
@@ -25,7 +25,7 @@ public class Hr extends Employee{
 	 }
 	 @Override
 	 public String toString() {
-		return "Hr [ name = " + getName() + "commition=" + commition + ", salary=" + (getSalary() +commition)+"]";
+		return "Hr [ name = " + getName() + " commition = " + commition + ", salary = " + (getSalary() + commition ) + "]";
 	 }
 	 @Override
 	 public double calculateSalary() {

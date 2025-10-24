@@ -10,7 +10,7 @@ public class SalesManager extends Employee{
 		
 		 public SalesManager(int id, String name, double salary, double target, double incentive3) {
 			super();
-			this.incentive = 20;
+			this.incentive = 200;
 			this.target = 30;
 		}
 
@@ -61,8 +61,8 @@ public class SalesManager extends Employee{
 
 		 @Override
 		 public double calculateSalary() {
-			// TODO Auto-generated method stub
-			return 0;
+			 return(getSalary() + this.incentive);
+			
 		 }
 		 
 		

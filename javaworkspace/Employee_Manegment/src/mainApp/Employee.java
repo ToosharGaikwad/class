@@ -1,7 +1,8 @@
 package mainApp;
 
+import java.io.Serializable;
 import java.util.*;
-public abstract class Employee {
+public abstract class Employee implements Serializable{
 	public int id;
 	public String name;
 	public double salary;

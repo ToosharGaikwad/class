@@ -1,8 +1,13 @@
 package view;
 
 import java.util.Scanner;
+
+import Controller.EmployeeDAO;
+import Controller.EmployeeFilehandlingDAO;
+import Controller.EmployeeHCDAO;
+
 import java.util.ArrayList;
-import DAO.EmployeeDAO;
+
 import mainApp.Employee;
 import model.Admin;
 import model.Hr;
@@ -11,11 +16,11 @@ import model.SalesManager;
 public class Test {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        EmployeeDAO dao = new EmployeeDAO();
-        ArrayList<Employee> employees=null;
+        EmployeeDAO dao = new EmployeeFilehandlingDAO();  
+        ArrayList<Employee> employees=null; 
 
-        int choice;
-        do {
+        int choice; 
+        do { 
             System.out.println("\n===== Employee Management Menu =====");
             System.out.println("1. Add Employee");
             System.out.println("2. Search Employee");
@@ -74,26 +79,7 @@ public class Test {
                         System.out.println("❌ Employee not found.");
                     }
                     break;
-//                case 2:   	
-//                    System.out.print("Enter ID to search: ");
-//                    id = sc.nextInt();
-//                   
-//                    Employee e = dao.searchEmployeeById(id);
-//                    System.out.println("name = "+e.getName()+"id =  "+e.getId());
-//                    while (e == null) {
-//                        System.out.println("Employee not found. Please re-enter a valid ID:");
-//                        id = sc.nextInt();
-//                        e = dao.searchEmployeeById(id);
-//                        System.out.println("enter 0 for exit");
-//                        if(id==0) {
-//                        	break;
-//                        }
-//                    }
-//                    
-//                   
-//                	
-//				System.out.println("Found: " + e);
-//				break;
+                    
 				case 3:
                     System.out.print("Enter ID to update: ");
                     id = sc.nextInt();
@@ -104,9 +90,6 @@ public class Test {
                     else
                         System.out.println("Employee not found.");
                     break;
-                    
-				
-
                 case 4:
                     System.out.print("Enter ID to delete: ");
                     id = sc.nextInt();
@@ -115,7 +98,6 @@ public class Test {
                     else
                         System.out.println("Employee not found.");
                     break;
-
                 case 5:
                     employees = dao.getAllEmployees();
                     if (employees.isEmpty()) {
@@ -126,8 +108,8 @@ public class Test {
                             System.out.println(emp);
                         }
                     }
-                    break;
                     
+                    break;
                 case 6:
                     employees = dao.getAllEmployees();
                     if (employees.isEmpty()) {
@@ -139,35 +121,26 @@ public class Test {
                         }
                     }
                     break;
+
                 case 7:
-                    System.out.print("Enter name to search: ");
-                    sc.nextLine(); 
-                    String newName = sc.nextLine();
-                    Employee emp = dao.searchByName(newName);
-                    
-                    if (emp != null) {
-                        System.out.println("✅ Found Employee: " + emp);
-                    } else {
-                        System.out.println("❌ No employee found with name: " + newName);
-                    }
+                	sc.nextLine();
+                	System.out.println("enter a name for search Employee");
+                	String newName = sc.nextLine();
+                	Employee emp = dao.searchByName(newName);
+                	
+                   	while(emp==null) {
+                   		
+                		 System.out.println("re-enter valid  Name " );
+                		  newName = sc.nextLine();
+                		  emp = dao.searchByName(newName);
+                	 }
+                   	System.out.println(" employee found "+ emp);
                     break;
-//                case 7:
-//                	
-//                	System.out.println("enter a name for serch Employee");
-//                	String newName = sc.nextLine();
-//                	Employee emp = dao.searchByName(newName);
-//                	
-//                   	while(emp==null) {
-//                		 System.out.println("re-enter valid  Name " );
-//                		  newName = sc.nextLine();
-//                		  e = dao.searchByName(newName);
-//
-//                	 }
                     
                 case 0:
                     System.out.println("Exiting... Goodbye!");
                     break;
-
+                    
                 default:
                     System.out.println("Invalid choice! Try again.");
             }
