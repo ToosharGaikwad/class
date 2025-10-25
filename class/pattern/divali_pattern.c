@@ -72,10 +72,13 @@ void main(){
 
 for(int i=0;i<7;i++){
 	for(int j=0;j<31;j++){
+			if(j<1)
+					printf("  ");
 		if(i==j)
 		printf("*");
 		if(i+j==17)
 		printf("*");
+	
 		else
 		printf("  ");
 	}
@@ -84,7 +87,7 @@ for(int i=0;i<7;i++){
 
 for(int i=0;i<5;i++){
 	for(int j=0;j<25;j++){
-		if(j>10)
+		if(j>13)
 		printf("*");
 		else 
 		printf(" ");
@@ -93,9 +96,9 @@ for(int i=0;i<5;i++){
 }
 	printf("\n");
 }
-for(int i=0;i<8;i++){
+for(int i=0;i<5;i++){
 	for(int j=0;j<22;j++){
-		if(j>10&&j%2==0)
+		if(j>12&&j%2==0)
 		printf("0 ");
 		else
 		printf(" ");
