@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        image = document.getElementsByTagName("img");
+        for (i = 0; i < image.length; i++) {
+          image[i].addEventListener("click", function () {
+            document.getElementById("dest").src = this.src;
+            console.log("hello");
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <img
+      id="dest"
+      width="250px"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoYQWd_stlAL4wHra1cL-ntnLfTvD62lUAQ&s"
+      alt="not found"
+    />
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj0tSeiCr4RTiIyoMOCPdyRIlQmCt4k0ltRA&s"
+      alt="nn"
+    />
+    <img
+      src="https://cdn.pixabay.com/photo/2022/08/08/19/36/landscape-7373484_1280.jpg"
+      alt=""
+      height="200px"
+    />
+    <img
+      src="https://www.newmynamepix.com/upload/post/sample/1589515256_New_Beautiful_Girl_Pictures_Profile_With_Name_Images.jpg"
+      alt=""
+    />
+  </body>
+</html>

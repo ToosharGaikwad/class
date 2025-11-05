@@ -30,7 +30,7 @@ public class Admin extends Employee{
 	}
 	@Override
 	public String toString() {
-		return "salary "+ (salary + allowance) +" name = "  + name + " id = " + id;
+		return  "[ Admin "+ "name = "  + name + " id = " + id +  "salary "+ (salary + allowance) + " ]";
 	}
 	@Override
 	public double calculateSalary() {

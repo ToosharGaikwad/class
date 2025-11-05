@@ -1,0 +1,2 @@
+module inter {
+}

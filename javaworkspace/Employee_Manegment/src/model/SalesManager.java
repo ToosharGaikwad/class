@@ -8,8 +8,8 @@ public class SalesManager extends Employee{
 		
 		
 		
-		 public SalesManager(int id, String name, double salary, double target, double incentive3) {
-			super();
+		 public SalesManager(int id, String name, double salary, double target, double incentive) {
+			super(id,  name,  salary);
 			this.incentive = 200;
 			this.target = 30;
 		}
@@ -17,7 +17,7 @@ public class SalesManager extends Employee{
 
 
 		public SalesManager(int id ,String name, double salary,double incentive, int target) {
-			super(id, name,salary);
+//			super(id, name,salary);
 			this.incentive = incentive;
 			this.target = target;
 		}
@@ -54,7 +54,7 @@ public class SalesManager extends Employee{
 
 		 @Override
 		 public String toString(){
-			return "Sellsman [incentive=" + incentive + ", id=" + id + ", salary=" + (getSalary()  + incentive) + ", name=" + name + "]";
+			return "Sellsman [ " +" name = " + name + ", id=" + id + ", salary = " + (getSalary()  + incentive) +" incentive= " + incentive + "]";
 		 }
 
 

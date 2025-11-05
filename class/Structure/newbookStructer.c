@@ -35,7 +35,7 @@ void main() {
         printf("\n------ MENU ------\n");
         printf("2. Display books\n");
         printf("3. Search by name\n");
-        printf("31. Search by name hint\n");
+       
         printf("4. Search by ID\n");
         printf("5. Delete by name\n");
         printf("6. Delete by ID\n");
@@ -43,6 +43,7 @@ void main() {
         printf("8. Update book\n");
         printf("9. Most expensive & cheapest\n");
         printf("10. Sort by price\n");
+         printf("11. Search by name hint\n");
         printf("-1. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -56,7 +57,7 @@ void main() {
             case 2:
                 displaybook(brr, size);
                 break;
-
+				}
             case 3: {
                 char bname[22];
                 printf("Enter a name to search: ");
@@ -70,7 +71,7 @@ void main() {
                     
                     	printf("Enter a name to search: ");
                 scanf("%s", bname);
-                int index = searchbookByName(brr, size, bname);
+                 index = searchbookByName(brr, size, bname);
                 if (index != -1)
                     printf("Book found: %s by %s, Price: %d\n", brr[index].Name, brr[index].auther, brr[index].price);
 
@@ -79,17 +80,7 @@ void main() {
                 break;
             }
 
-            case 31: {
-                char bname[22];
-                printf("Enter partial name to search: ");
-                scanf("%s", bname);
-                int indexh = searchbookByNamehint(brr, size, bname);
-                if (indexh != -1)
-                    printf("Hint match found: %s by %s\n", brr[indexh].Name, brr[indexh].auther);
-                else
-                    printf("No book found with that hint\n");
-                break;
-            }
+           
 
             case 4: {
     printf("Enter book ID to search:");
@@ -148,6 +139,18 @@ void main() {
                 printf("Books sorted by price:\n");
                 displaybook(brr, size);
                 break;
+                
+            case 11: {
+                char bname[22];
+                printf("Enter partial name to search: ");
+                scanf("%s", bname);
+                int indexh = searchbookByNamehint(brr, size, bname);
+                if (indexh != -1)
+                    printf("Hint match found: %s by %s\n", brr[indexh].Name, brr[indexh].auther);
+                else
+                    printf("No book found with that hint\n");
+                break;
+            }
 
             default:
                 printf("Invalid choice! Try again.\n");

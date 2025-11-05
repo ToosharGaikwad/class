@@ -10,7 +10,9 @@
   width: 300px;
   height: 300px;
 }
-.maincontainer {
-  display: flex;
-  flex-wrap: wrap-reverse;
+@media() {
+  .maincontainer {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
 }
