@@ -1,4 +1,4 @@
-import { users } from "./users.js";
+import { users } from "./user";
 
 let mobInput, sendOtpBtn, otpInput, loginBtn, messageBox;
 let currentUser = null;

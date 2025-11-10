@@ -225,19 +225,30 @@ int main() {
                 break;
 
             //  Search by Name Hint
-            case 10: {
-                char bname[22];
-                printf("Enter partial name to search: ");
-                scanf("%s", bname);
-                int indexh = searchbookByNamehint(brr, size, bname);
-                if (indexh != -1)
-                    printf("Hint match found: %s by %s\n", brr[indexh].Name, brr[indexh].auther);
-                else
-                    printf("No book found with that hint\n");
-                break;
-            }
+           case 10: {
+    while (1) {
+        char bname[22];
+        printf("Enter partial name to search: ");
+        scanf("%s", bname);
 
-            default:
+        int indexh = searchbookByNamehint(brr, size, bname);
+
+        if (indexh != -1)
+            printf("Hint match found: %s by %s\n", brr[indexh].Name, brr[indexh].auther);
+        else
+            printf("No book found with that hint\n");
+
+        int ex;
+        printf("If you want to exit, press 0: ");
+        scanf("%d", &ex);   
+
+        if (ex == 0) {
+            break;        
+        }
+    }
+    break;  
+}
+ default:
                 printf("Invalid choice! Try again.\n");
         }
     }
@@ -245,7 +256,7 @@ int main() {
     return 0;
 }
 
-//      FUNCTION DEFINITIONS 
+
 
 void storebook(Book brr[], int size) {
     strcpy(brr[0].Name, "CProgramming");

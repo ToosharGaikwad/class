@@ -18,6 +18,7 @@ public class demoAnonyms {
 	public static void main(String[] args) {
 		Mall m1 = new Mall();
 		m1.discount();
+		
 		new Discount() {
 			
 			@Override

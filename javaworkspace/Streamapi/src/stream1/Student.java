@@ -8,11 +8,12 @@ public class Student {
 	
 	
 
-	public Student(int rollno, String name, String gender) {
+	public Student(int rollno, String name, String gender,Float marks) {
 		
 		this.rollno = rollno;
 		this.name = name;
 		this.gender = gender;
+		this.marks = marks;
 	}
 	
 	public float getMarks() {

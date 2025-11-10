@@ -8,4 +8,4 @@
 *.setting
 *.Setting
 *.classpath
-*.project
+*.project .metadata apache-tomcat-10.1.48 mysql-connector-j-8.0.33
