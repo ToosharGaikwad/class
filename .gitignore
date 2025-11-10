@@ -8,4 +8,17 @@
 *.setting
 *.Setting
 *.classpath
-*.project .metadata apache-tomcat-10.1.48 mysql-connector-j-8.0.33
+*.project .metadata apache-tomcat-10.1.48 mysql-connector-j-8.0.33*.class
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+.metadata/
+.settings/
+.classpath
+.project
+/bin/
+/build/
+/target/
+
