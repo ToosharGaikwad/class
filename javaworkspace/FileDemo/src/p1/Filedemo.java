@@ -17,10 +17,11 @@ public class Filedemo {
 	public static void main1(String[] args) {
 		try {
 			
-		
-			FileOutputStream fos = new FileOutputStream("C:/Users/Avdhut/Desktop//filedemo//file.txt");
+			
+			FileOutputStream fos = new FileOutputStream("D:/nousefile.txt");
 			
 			DataOutputStream dos = new DataOutputStream(fos);
+			
 			
 			ObjectOutputStream oos = new ObjectOutputStream(dos);
 			
@@ -42,7 +43,7 @@ public class Filedemo {
 	
 	public static void main(String[] args) throws IOException {
 
-	FileInputStream fos = new FileInputStream("C:/Users/Avdhut/Desktop//filedemo//file.txt");
+	FileInputStream fos = new FileInputStream("D:/nousefile.txt");
 	
 	DataInputStream dos = new DataInputStream(fos);
 	
@@ -57,6 +58,7 @@ public class Filedemo {
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
+		System.out.println("file is empty ");
 	}
 	
 	

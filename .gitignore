@@ -8,7 +8,9 @@
 *.setting
 *.Setting
 *.classpath
-*.project .metadata apache-tomcat-10.1.48 mysql-connector-j-8.0.33*.class
+*.project
+* .metadata apache-tomcat-10.1.48 
+mysql-connector-j-8.0.33*.class
 *.log
 *.tmp
 *.bak
@@ -21,4 +23,6 @@
 /bin/
 /build/
 /target/
+
+
 
