@@ -28,7 +28,9 @@ class withdraw {
 	}
 	public void withdrawMoney(int challan) {
 		balance = balance - challan;
+		
 		System.out.println("Withdrawal successful!");
+		
 	}
 	
 	
