@@ -19,19 +19,23 @@ class withdraw {
 	
 	void noBalance(int challan) throws withdrawException{
 		
+			
 			if (challan > balance) {
 	            throw new withdrawException();
+	        }else {
+	        	balance = balance - challan;
+	        	System.out.println("Withdrawal successful!");
 	        }
 		
 		
 	
 	}
-	public void withdrawMoney(int challan) {
-		balance = balance - challan;
-		
-		System.out.println("Withdrawal successful!");
-		
-	}
+//	public void withdrawMoney(int challan) {
+//		balance = balance - challan;
+//		
+//		System.out.println("Withdrawal successful!");
+//		
+//	}
 	
 	
 }
@@ -47,8 +51,8 @@ public class CustemATM {
 		try
 		{
 			
-			wd.withdrawMoney(17730);
-			wd.noBalance(11200);
+
+			wd.noBalance(200);
 			System.out.println();
 		}
 		 catch 
