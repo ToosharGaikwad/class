@@ -5,10 +5,8 @@ class withdrawException extends Exception{
 
 	@Override
 	public String toString() {
-		return "withdraw Exception  !!";
+		return "withdraw Exception You can not money withdraw Your balance is low then you withdral  !!";
 	}
-	
-	
 }
 
 class withdraw {
@@ -26,10 +24,8 @@ class withdraw {
 	        	balance = balance - challan;
 	        	System.out.println("Withdrawal successful!");
 	        }
-		
-		
-	
 	}
+	
 //	public void withdrawMoney(int challan) {
 //		balance = balance - challan;
 //		
@@ -50,8 +46,6 @@ public class CustemATM {
 		
 		try
 		{
-			
-
 			wd.noBalance(200);
 			System.out.println();
 		}
