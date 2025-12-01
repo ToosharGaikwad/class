@@ -14,6 +14,8 @@ public class Mainapp {
 		allStudent.add(new Student(1, "tushar", "m",75.2f));
 		allStudent.add(new Student(1, "priya", "f",90.2f));
 		allStudent.add(new Student(1, "aujaswi", "f",85.2f));
+		    
+		
 		
 		
 //		allStudent.stream().forEach(ref->System.out.println(ref.getName()));

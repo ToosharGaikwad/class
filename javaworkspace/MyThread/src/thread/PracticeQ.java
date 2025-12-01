@@ -60,10 +60,7 @@ class EvenThread extends Thread{
 		for(int i=0;i<10;i+=2) {
 			printer.Printeven(i);
 		}
-	}
-	
-	
-	
+	}	
 }
 
 public class PracticeQ {
