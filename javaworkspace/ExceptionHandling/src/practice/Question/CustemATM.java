@@ -46,7 +46,7 @@ public class CustemATM {
 		
 		try
 		{
-			wd.noBalance(200);
+			wd.noBalance(11200);
 			System.out.println();
 		}
 		 catch 
